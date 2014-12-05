@@ -1,0 +1,67 @@
+{
+  "status": "OK",
+  "results": [ {
+    "types": [ "street_address" ],
+    "formatted_address": "279-281 貝德福大街, 布魯克林, 紐約 11211, 美国",
+    "address_components": [ {
+      "long_name": "279-281",
+      "short_name": "279-281",
+      "types": [ "street_number" ]
+    }, {
+      "long_name": "貝德福大街",
+      "short_name": "貝德福大街",
+      "types": [ "route" ]
+    }, {
+      "long_name": "布魯克林",
+      "short_name": "布魯克林",
+      "types": [ "sublocality", "political" ]
+    }, {
+      "long_name": "紐約",
+      "short_name": "紐約",
+      "types": [ "locality", "political" ]
+    }, {
+      "long_name": "京斯",
+      "short_name": "京斯",
+      "types": [ "administrative_area_level_2", "political" ]
+    }, {
+      "long_name": "紐約",
+      "short_name": "NY",
+      "types": [ "administrative_area_level_1", "political" ]
+    }, {
+      "long_name": "美国",
+      "short_name": "US",
+      "types": [ "country", "political" ]
+    }, {
+      "long_name": "11211",
+      "short_name": "11211",
+      "types": [ "postal_code" ]
+    } ],
+    "geometry": {
+      "location": {
+        "lat": 40.7142215,
+        "lng": -73.9614454
+      },
+      "location_type": "RANGE_INTERPOLATED",
+      "viewport": {
+        "southwest": {
+          "lat": 40.7110552,
+          "lng": -73.9646313
+        },
+        "northeast": {
+          "lat": 40.7173505,
+          "lng": -73.9583361
+        }
+      },
+      "bounds": {
+        "southwest": {
+          "lat": 40.7139010,
+          "lng": -73.9616800
+        },
+        "northeast": {
+          "lat": 40.7145047,
+          "lng": -73.9612874
+        }
+      }
+    }
+  }]
+}
