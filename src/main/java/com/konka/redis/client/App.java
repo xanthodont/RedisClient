@@ -21,8 +21,9 @@ import redis.clients.jedis.JedisPool;
 public class App 
 {
 	private static Logger logger = Logger.getLogger(App.class);
-	public static final String REDIS_REGISTER_KEY = RedisConstants.REQUEST_REGISTER;
+	public static final String REDIS_REGISTER_KEY1 = RedisConstants.REQUEST_REGISTER;
 	public static final String REDIS_INFO_KEY = RedisConstants.REQUEST_INFO;
+	public static final String REDIS_LOCATION_KEY = RedisConstants.INFO_LOCATION;
 	
 	private static ApplicationContext ctx = new ClassPathXmlApplicationContext("app.xml");
 	

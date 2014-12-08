@@ -27,7 +27,7 @@ public abstract class DBWriter {
     volatile boolean done;
     /** 线程名称 */
     protected String threadName;
-    protected int queueSize = 10000;
+    protected int queueSize = 100;
 	
 	public DBWriter(DataSource dataSourcePool, String sqlStatement) {
 		this.dataSourcePool = dataSourcePool;
@@ -129,14 +129,6 @@ public abstract class DBWriter {
                 ie.printStackTrace();
                 return;
             }
-            synchronized (queue) {
-                queue.notifyAll();
-            }
-		}
-	}
-	public void putInfo(List<Info> infos) {
-		if (!done) {
-			queue.addAll(infos);
             synchronized (queue) {
                 queue.notifyAll();
             }

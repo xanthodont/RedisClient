@@ -30,7 +30,7 @@ public class RegisterThread implements Runnable{
 	private int batchSize = 1000;
 	/** 数据库连接池 */
 	private DataSource dataSourcePool;
-	private int sleepSeconds = 60;
+	private int sleepSeconds = 30;
 	private static final String SQL_STATEMENT = "call pro_insert_account(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 	
@@ -44,7 +44,7 @@ public class RegisterThread implements Runnable{
 		logger.info("== RegisterThread: begin to start !!!");
 		while (true) {
 			Jedis jedis = jedisPool.getResource();
-			if (jedis.llen(App.REDIS_REGISTER_KEY) == 0) { // 无数据
+			if (jedis.llen(RedisConstants.REQUEST_REGISTER) == 0) { // 无数据
 				// wait 线程等待
 				jedisPool.returnResource(jedis);
 				logger.info(String.format("=== RegisterThread: jedis length is 0 , Thread sleep %d s!\n", sleepSeconds));
@@ -65,7 +65,7 @@ public class RegisterThread implements Runnable{
 				/** 一次批处理 */
 				for (int i = 0; i < batchSize; i++) {
 					/** 读取redis数据 */
-					String params = jedis.lpop(App.REDIS_REGISTER_KEY);
+					String params = jedis.lpop(RedisConstants.REQUEST_REGISTER);
 					if (StringUtil.isEmpty(params)) {
 						logger.info("-> jedis pop finish ");
 						break;

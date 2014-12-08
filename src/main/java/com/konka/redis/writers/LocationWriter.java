@@ -19,7 +19,7 @@ public class LocationWriter extends DBWriter{
 
 	public LocationWriter(DataSource dataSourcePool) {
 		// TODO Auto-generated constructor stub
-		super(dataSourcePool, SQL_STATEMENT, "LocationWriter", 20000);
+		super(dataSourcePool, SQL_STATEMENT, "LocationWriter", 200);
 	}
 
 	@Override
